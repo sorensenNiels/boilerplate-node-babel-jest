@@ -14,6 +14,8 @@ Opinonate node boilerplate project
 - Express
 - Config
 - Winston
+- Lodash
+- Async
 
 ## Testing
 
