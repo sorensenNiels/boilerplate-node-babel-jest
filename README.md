@@ -1,6 +1,6 @@
 # boilerplateNodeBabelJest
 
-Opinonate node boilerplate with the following modules / frameworks
+Opinonate node boilerplate
 
 ## Modules
 - Express
