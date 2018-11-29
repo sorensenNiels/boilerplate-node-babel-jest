@@ -2,8 +2,9 @@
 
 Opinonate node boilerplate project
 
-## Compile / Syntax
+## Editor / Compile / Syntax
 
+- Visual Studio Code - Recomended extensions added
 - Babel ES2018
 - Eslint
 - Prettier
