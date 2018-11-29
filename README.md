@@ -5,7 +5,7 @@ Opinonate node boilerplate
 ## Compile / Syntax
 
 - Babel
-- Estlint
+- Eslint
 - Prettier
 
 ## Modules
