@@ -1,10 +1,10 @@
 # boilerplateNodeBabelJest
 
-Opinonate node boilerplate
+Opinonate node boilerplate project
 
 ## Compile / Syntax
 
-- Babel
+- Babel ES2018
 - Eslint
 - Prettier
 - Nodemon
@@ -19,3 +19,9 @@ Opinonate node boilerplate
 
 - Jest
 - Chai
+
+## Deployment
+
+- PM2 - (coming)
+- Docker - Using Dockerfile (coming)
+- Jenkins - Using Jenkinsfile (coming)
