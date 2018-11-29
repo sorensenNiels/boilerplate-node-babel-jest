@@ -7,6 +7,7 @@ Opinonate node boilerplate
 - Babel
 - Eslint
 - Prettier
+- Nodemon
 
 ## Modules
 
@@ -17,3 +18,4 @@ Opinonate node boilerplate
 ## Testing
 
 - Jest
+- Chai
