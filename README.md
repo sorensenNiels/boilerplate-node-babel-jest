@@ -1,4 +1,4 @@
-# boilerplateNodeBabelJest
+# Node-Babel-Jest
 
 Opinonate node boilerplate project
 
