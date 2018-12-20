@@ -7,29 +7,71 @@
     "test": "jest",
     "build": "babel src --out-dir dist",
     "start": "npm run build && node dist/server.js",
-    "watch": "nodemon --exec babel-node src/server.js"
+    "watch": "nodemon --exec babel-node src/server.js",
+    "coverage": "npm test -- --coverage",
+    "postcoverage": "opn coverage/lcov-report/index.html",
+    "lint": "eslint .",
+    "flow": "flow check",
+    "docs": "documentation readme src --section=API",
+    "postdocs": "git add README.md",
+    "clean": "rimraf dist",
+    "flowbuild": "flow-copy-source src dist",
+    "prebuild": "npm run docs && npm run clean && npm run flowbuild",
+    "preversion": "npm run lint && npm test && npm run build",
+    "version": "standard-changelog && git add CHANGELOG.md",
+    "postpublish": "git push origin master --follow-tags"
   },
   "author": "",
   "license": "ISC",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "xhusky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "devDependencies": {
-    "@babel/cli": "^7.2.0",
-    "@babel/core": "^7.2.0",
-    "@babel/node": "^7.2.0",
-    "@babel/preset-env": "^7.2.0",
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-flow": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
     "chai": "^4.2.0",
     "cross-env": "^5.2.0",
+    "documentation": "^9.0.0-alpha.0",
     "eslint": "^5.10.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-flowtype": "^3.0.0",
+    "eslint-plugin-flowtype-errors": "^3.5.1",
+    "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jest": "^22.1.2",
-    "jest": "^23.6.0",
-    "nodemon": "^1.18.7",
+    "eslint-plugin-prettier": "^3.0.0",
+    "flow-bin": "^0.89.0",
+    "flow-copy-source": "^2.0.2",
+    "husky": "^1.1.2",
+    "jest-cli": "^23.6.0",
+    "lint-staged": "^8.1.0",
+    "nodemon": "^1.18.9",
+    "opn-cli": "^4.0.0",
     "prettier": "^1.15.3",
-    "regenerator-runtime": "^0.13.1"
+    "rimraf": "^2.6.2",
+    "standard-changelog": "^2.0.1"
   },
   "dependencies": {
     "async": "^3.0.1-0",
-    "config": "^3.0.0",
+    "config": "^3.0.1",
     "express": "^4.16.4",
     "lodash": "^4.17.11",
     "winston": "^3.1.0"

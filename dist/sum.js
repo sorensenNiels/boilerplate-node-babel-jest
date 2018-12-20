@@ -5,9 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var sum = function sum(a, b) {
-  return a + b;
-};
+const sum = (a, b) => a + b;
 
 var _default = sum;
 exports.default = _default;

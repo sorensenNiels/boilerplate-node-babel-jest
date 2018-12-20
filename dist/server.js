@@ -5,11 +5,7 @@ var _express = _interopRequireDefault(require("express"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* eslint-disable no-console */
-var app = (0, _express.default)();
-var port = 3000;
-app.get('/', function (req, res) {
-  return res.send('Hello World!');
-});
-app.listen(port, function () {
-  return console.log("Example app listening on port ".concat(port, "!"));
-});
+const app = (0, _express.default)();
+const port = 3000;
+app.get('/', (req, res) => res.send('Hello World!'));
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
