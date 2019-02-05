@@ -5,6 +5,7 @@ var _express = _interopRequireDefault(require("express"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* eslint-disable no-console */
+// decoratorsBeforeExport: false
 const app = (0, _express.default)();
 const port = 3000;
 app.get('/', (req, res) => res.send('Hello World!'));

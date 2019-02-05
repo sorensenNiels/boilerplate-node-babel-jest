@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 module.exports = function(api) {
   api.cache(true);
 
@@ -9,10 +10,12 @@ module.exports = function(api) {
           node: 10
         }
       }
-    ],
-    '@babel/preset-flow'
+    ]
   ];
-  const plugins = ['@babel/plugin-proposal-class-properties'];
+  const plugins = [
+    // '@babel/plugin-proposal-decorators',
+    '@babel/plugin-proposal-class-properties'
+  ];
 
   return {
     presets,

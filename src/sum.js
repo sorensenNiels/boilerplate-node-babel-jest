@@ -1,4 +1,3 @@
-// @flow
-const sum = (a: number, b: number) => a + b;
+const sum = (a, b) => a + b;
 
 export default sum;
