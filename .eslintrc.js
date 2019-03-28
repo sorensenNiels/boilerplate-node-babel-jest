@@ -8,10 +8,12 @@ module.exports = {
     node: true,
     'jest/globals': true
   },
+
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module'
   },
+
   rules: {
     'comma-dangle': ['error', 'never'],
     indent: ['error', 2],
