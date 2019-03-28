@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/server.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --forceExit",
     "build": "babel src --out-dir dist",
     "start": "npm run build && node dist/server.js",
     "watch": "nodemon --exec babel-node src/server.js",
@@ -50,7 +50,7 @@
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.5.0",
     "babel-plugin-lodash": "^3.3.4",
-    "chai": "^4.2.0",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "cross-env": "^5.2.0",
     "documentation": "^9.3.1",
     "eslint": "^5.15.3",
