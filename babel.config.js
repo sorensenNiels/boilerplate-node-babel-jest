@@ -1,6 +1,6 @@
 /* eslint-disable func-names */
 module.exports = function(api) {
-  api.cache(true);
+  api.cache(false);
 
   const presets = [
     [
