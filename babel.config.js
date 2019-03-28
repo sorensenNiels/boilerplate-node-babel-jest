@@ -23,6 +23,8 @@ module.exports = function(api) {
   }
 
   return {
+    sourceMaps: true,
+    retainLines: false,
     presets,
     plugins
   };
