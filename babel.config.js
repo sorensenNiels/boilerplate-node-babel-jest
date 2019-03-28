@@ -1,6 +1,6 @@
 /* eslint-disable func-names */
 module.exports = function(api) {
-  api.cache(false);
+  // api.cache(false);
 
   const presets = [
     [
@@ -13,9 +13,14 @@ module.exports = function(api) {
     ]
   ];
   const plugins = [
-    // '@babel/plugin-proposal-decorators',
-    '@babel/plugin-proposal-class-properties'
+    ['@babel/plugin-proposal-decorators', { decoratorsBeforeExport: true }],
+    '@babel/plugin-proposal-class-properties',
+    'lodash'
   ];
+
+  if (api.env('production')) {
+    plugins.push('transform-remove-console');
+  }
 
   return {
     presets,
