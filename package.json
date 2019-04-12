@@ -5,7 +5,7 @@
   "main": "dist/server.js",
   "scripts": {
     "test": "jest --forceExit",
-    "build": "babel src --out-dir dist",
+    "build": "npm run clean && babel src --out-dir dist",
     "start": "npm run build && node dist/server.js",
     "watch": "nodemon --exec babel-node src/server.js",
     "coverage": "npm test -- --coverage",
@@ -14,10 +14,10 @@
     "docs": "documentation readme src --section=API",
     "postdocs": "git add README.md",
     "clean": "rimraf dist",
-    "prebuild": "npm run docs && npm run clean",
-    "preversion": "npm run lint && npm test && npm run build",
+    "xprebuild": "npm run clean",
+    "xpreversion": "npm run lint && npm test && npm run build",
     "version": "standard-changelog && git add CHANGELOG.md",
-    "prepublish": "npm run build",
+    "xprepublish": "npm run build",
     "xpostpublish": "git push origin master --follow-tags"
   },
   "engines": {
@@ -41,19 +41,19 @@
     ]
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.4.0",
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/plugin-proposal-decorators": "^7.4.0",
-    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-env": "^7.4.3",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
-    "babel-jest": "^24.5.0",
+    "babel-jest": "^24.7.1",
     "babel-plugin-lodash": "^3.3.4",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "cross-env": "^5.2.0",
     "documentation": "^9.3.1",
-    "eslint": "^5.15.3",
+    "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-import": "^2.16.0",
@@ -62,10 +62,10 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "husky": "^1.3.1",
-    "jest-cli": "^24.5.0",
+    "jest-cli": "^24.7.1",
     "lint-staged": "^8.1.5",
-    "nodemon": "^1.18.10",
-    "opn-cli": "^4.0.0",
+    "nodemon": "^1.18.11",
+    "opn-cli": "^4.1.0",
     "prettier": "^1.16.4",
     "rimraf": "^2.6.3",
     "standard-changelog": "^2.0.7"
@@ -73,8 +73,10 @@
   "dependencies": {
     "async": "^3.0.1-0",
     "axios": "^0.18.0",
-    "config": "^3.0.1",
+    "config": "^3.1.0",
     "express": "^4.16.4",
-    "lodash": "^4.17.11"
+    "fastify": "^2.2.0",
+    "lodash": "^4.17.11",
+    "pino": "^5.12.2"
   }
 }
