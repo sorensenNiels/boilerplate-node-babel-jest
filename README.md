@@ -5,24 +5,22 @@ Opinionated node boilerplate project
 ## Editor / Compile / Syntax
 
 -   Visual Studio Code - Recomended extensions added
--   Babel ES2018
--   Flow
+-   Babel ES2018 (v7)
 -   Eslint
 -   Prettier
 -   Nodemon
 
 ## Modules
 
--   Express
--   Config
--   Winston
--   Lodash
--   Async
+-   Express (migrating to Fastify) (webserver)
+-   Config (configuration)
+-   Pino (logger)
+-   Lodash (utilities)
+-   Async (utilities)
 
 ## Testing
 
 -   Jest
--   Chai
 
 ## Deployment
 
