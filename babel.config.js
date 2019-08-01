@@ -14,8 +14,7 @@ module.exports = function(api) {
   ];
   const plugins = [
     ['@babel/plugin-proposal-decorators', { decoratorsBeforeExport: true }],
-    ['@babel/plugin-proposal-class-properties', { loose: true }],
-    'lodash'
+    ['@babel/plugin-proposal-class-properties', { loose: true }]
   ];
 
   if (api.env('production')) {

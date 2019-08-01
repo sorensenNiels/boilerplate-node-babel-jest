@@ -1,13 +1,20 @@
 // @ts-check
 
-/* eslint-disable no-console */
-const express = require('express');
+import fastify from 'fastify';
 
-// import express from 'express';
+const app = fastify({ logger: true });
 
-const app = express();
-const port = 3000;
+app.get('/', async (req, res) => {
+  res.send({ hello: 'world' });
+});
 
-app.get('/', (req, res) => res.send('Hello World!'));
+const start = async () => {
+  try {
+    await app.listen(3000);
+  } catch (err) {
+    app.log.error(err);
+    process.exit(1);
+  }
+};
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+start();
